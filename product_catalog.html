@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Catalog</title>
+<style>
+body {
+    font-family: Good Sans, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    background-color: #F7F6F2;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0A453A;
+}
+#search {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px 15px;
+    width: 50%;
+    max-width: 400px;
+    border-radius: 5px;
+    border: 1px solid #0A453A;
+    font-size: 16px;
+}
+table {
+    border-collapse: collapse;
+    width: 95%;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+th {
+    background-color: #0A453A;
+    color: #fff;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #0A453A;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #FFDDBD;
+    transition: background-color 0.2s ease;
+}
+
+/* Highlight Organic */
+td.organic-false { color: red; font-weight: bold; }
+td.organic-true { color: green; font-weight: bold; }
+
+/* Responsive table for small screens */
+@media screen and (max-width: 768px) {
+    table, thead, tbody, th, td, tr { display: block; }
+    thead tr { position: absolute; top: -9999px; left: -9999px; }
+    tr { margin-bottom: 15px; border-bottom: 2px solid #ddd; padding: 10px; }
+    td { border: none; position: relative; padding-left: 50%; text-align: left; }
+    td:before { position: absolute; top: 10px; left: 15px; width: 45%; padding-right: 10px; white-space: nowrap; font-weight: 600; color: #555; }
+    td:nth-of-type(1):before { content: "Vendor Part Number"; }
+    td:nth-of-type(2):before { content: "UPC"; }
+    td:nth-of-type(3):before { content: "Product Name"; }
+    td:nth-of-type(4):before { content: "Category"; }
+    td:nth-of-type(5):before { content: "Sub-Category"; }
+    td:nth-of-type(6):before { content: "In-House Part Number"; }
+    td:nth-of-type(7):before { content: "Material"; }
+    td:nth-of-type(8):before { content: "Organic"; }
+    td:nth-of-type(9):before { content: "Size"; }
+    td:nth-of-type(10):before { content: "Inventory"; }
+    td:nth-of-type(11):before { content: "Vendor"; }
+    td:nth-of-type(12):before { content: "Price"; }
+    td:nth-of-type(13):before { content: "ETA"; }
+    td:nth-of-type(14):before { content: "Image"; }
+}
+</style>
+</head>
+<body>
+
+<h1>Product Catalog</h1>
+<input type="text" id="search" placeholder="Search products...">
+
+<table id="csv-table">
+  <thead></thead>
+  <tbody></tbody>
+</table>
+
+<script>
+<!-- inside <script> -->
+const tableData = [
+  {"Vendor Part Number":"1234-001","UPC":"72527273070","Product Name":"Stapler","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-001-OS","Material":"Metal/Plastic","Organic":"False","Size":"1 unit","Inventory":"29","Vendor":"Office Supply Co","Price":"$21.00","ETA":"4 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-002","UPC":"72527273071","Product Name":"Organic Bananas","Category":"Food Product","Sub-Category":"Fruit","In-House Part Number":"1234-002-FP","Material":"—","Organic":"True","Size":"1 lb","Inventory":"45","Vendor":"Coscto Wholesale","Price":"$5.98","ETA":"2 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-003","UPC":"72527273072","Product Name":"Printer Paper","Category":"Office Supply","Sub-Category":"Paper","In-House Part Number":"1234-003-OS","Material":"Paper","Organic":"False","Size":"500 sheets","Inventory":"24","Vendor":"Office Supply Co","Price":"$47.09","ETA":"10 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-004","UPC":"72527273073","Product Name":"Desk Organizer","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-004-OS","Material":"Plastic/Wood","Organic":"False","Size":"12 x 8 x 5 in","Inventory":"24","Vendor":"Office Supply Co","Price":"$30.59","ETA":"2 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-005","UPC":"72527273074","Product Name":"Gala Apples","Category":"Food Product","Sub-Category":"Fruit","In-House Part Number":"1234-005-FP","Material":"—","Organic":"False","Size":"1 lb","Inventory":"45","Vendor":"Coscto Wholesale","Price":"$26.29","ETA":"8 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-006","UPC":"72527273075","Product Name":"Brown Rice","Category":"Food Product","Sub-Category":"Grain","In-House Part Number":"1234-006-FP","Material":"—","Organic":"False","Size":"2 lb","Inventory":"7","Vendor":"Coscto Wholesale","Price":"$41.24","ETA":"9 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-007","UPC":"72527273076","Product Name":"Paper Clips","Category":"Office Supply","Sub-Category":"Stationery","In-House Part Number":"1234-007-OS","Material":"Metal","Organic":"False","Size":"100 pieces","Inventory":"7","Vendor":"Office Supply Co","Price":"$16.69","ETA":"8 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-008","UPC":"72527273077","Product Name":"Sticky Notes","Category":"Office Supply","Sub-Category":"Stationery","In-House Part Number":"1234-008-OS","Material":"Paper","Organic":"False","Size":"3 x 3 in, 50 sheets","Inventory":"20","Vendor":"Office Supply Co","Price":"$42.80","ETA":"5 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-009","UPC":"72527273078","Product Name":"Chicken Breast","Category":"Food Product","Sub-Category":"Meat","In-House Part Number":"1234-009-FP","Material":"—","Organic":"False","Size":"1 lb","Inventory":"4","Vendor":"Coscto Wholesale","Price":"$36.84","ETA":"10 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-010","UPC":"72527273079","Product Name":"Filing Cabinet","Category":"Office Supply","Sub-Category":"Furniture","In-House Part Number":"1234-010-OS","Material":"Metal/Wood","Organic":"False","Size":"3 drawers","Inventory":"15","Vendor":"Office Supply Co","Price":"$46.15","ETA":"2 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-011","UPC":"72527273080","Product Name":"Fresh Strawberries","Category":"Food Product","Sub-Category":"Fruit","In-House Part Number":"1234-011-FP","Material":"—","Organic":"False","Size":"1 lb","Inventory":"15","Vendor":"Coscto Wholesale","Price":"$9.25","ETA":"1 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-012","UPC":"72527273081","Product Name":"Binder Clips","Category":"Office Supply","Sub-Category":"Stationery","In-House Part Number":"1234-012-OS","Material":"Metal","Organic":"False","Size":"12 pieces","Inventory":"22","Vendor":"Office Supply Co","Price":"$33.08","ETA":"1 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-013","UPC":"72527273082","Product Name":"Desk Lamp","Category":"Office Supply","Sub-Category":"Lighting","In-House Part Number":"1234-013-OS","Material":"Metal/Plastic","Organic":"False","Size":"15 x 6 x 6 in","Inventory":"38","Vendor":"Office Supply Co","Price":"$24.41","ETA":"10 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-014","UPC":"72527273083","Product Name":"Ground Coffee","Category":"Food Product","Sub-Category":"Beverage","In-House Part Number":"1234-014-FP","Material":"—","Organic":"False","Size":"12 oz","Inventory":"7","Vendor":"Coscto Wholesale","Price":"$42.10","ETA":"5 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-015","UPC":"72527273084","Product Name":"Greek Yogurt Cups","Category":"Food Product","Sub-Category":"Dairy","In-House Part Number":"1234-015-FP","Material":"—","Organic":"False","Size":"6 cups","Inventory":"9","Vendor":"Coscto Wholesale","Price":"$6.92","ETA":"1 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-016","UPC":"72527273085","Product Name":"Tape Dispenser","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-016-OS","Material":"Plastic","Organic":"False","Size":"1 unit","Inventory":"49","Vendor":"Office Supply Co","Price":"$37.90","ETA":"5 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-017","UPC":"72527273086","Product Name":"Cheddar Cheese Block","Category":"Food Product","Sub-Category":"Dairy","In-House Part Number":"1234-017-FP","Material":"—","Organic":"False","Size":"1 lb","Inventory":"41","Vendor":"Coscto Wholesale","Price":"$40.67","ETA":"8 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-018","UPC":"72527273087","Product Name":"Scissors","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-018-OS","Material":"Metal/Plastic","Organic":"False","Size":"8 in","Inventory":"46","Vendor":"Office Supply Co","Price":"$18.35","ETA":"3 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-019","UPC":"72527273088","Product Name":"Notebook","Category":"Office Supply","Sub-Category":"Stationery","In-House Part Number":"1234-019-OS","Material":"Paper","Organic":"False","Size":"100 pages","Inventory":"47","Vendor":"Office Supply Co","Price":"$42.41","ETA":"2 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-020","UPC":"72527273089","Product Name":"Clementines","Category":"Food Product","Sub-Category":"Fruit","In-House Part Number":"1234-020-FP","Material":"—","Organic":"False","Size":"1 lb","Inventory":"41","Vendor":"Coscto Wholesale","Price":"$19.46","ETA":"9 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-021","UPC":"72527273090","Product Name":"Whiteboard Markers","Category":"Office Supply","Sub-Category":"Stationery","In-House Part Number":"1234-021-OS","Material":"Plastic/Ink","Organic":"False","Size":"4-pack","Inventory":"16","Vendor":"Office Supply Co","Price":"$27.78","ETA":"2 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-022","UPC":"72527273091","Product Name":"Avocados","Category":"Food Product","Sub-Category":"Fruit","In-House Part Number":"1234-022-FP","Material":"—","Organic":"False","Size":"1 lb","Inventory":"43","Vendor":"Coscto Wholesale","Price":"$39.06","ETA":"9 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-023","UPC":"72527273092","Product Name":"Beef Jerky","Category":"Food Product","Sub-Category":"Meat Snack","In-House Part Number":"1234-023-FP","Material":"—","Organic":"False","Size":"3 oz","Inventory":"8","Vendor":"Coscto Wholesale","Price":"$19.13","ETA":"3 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-024","UPC":"72527273093","Product Name":"Desk Mat","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-024-OS","Material":"Rubber/Plastic","Organic":"False","Size":"18 x 12 in","Inventory":"50","Vendor":"Office Supply Co","Price":"$11.93","ETA":"6 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-025","UPC":"72527273094","Product Name":"USB Flash Drive","Category":"Office Supply","Sub-Category":"Storage Device","In-House Part Number":"1234-025-OS","Material":"Plastic/Metal","Organic":"False","Size":"32 GB","Inventory":"25","Vendor":"Office Supply Co","Price":"$30.42","ETA":"8 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-026","UPC":"72527273095","Product Name":"Trail Mix","Category":"Food Product","Sub-Category":"Snack","In-House Part Number":"1234-026-FP","Material":"—","Organic":"False","Size":"10 oz","Inventory":"38","Vendor":"Coscto Wholesale","Price":"$12.22","ETA":"4 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-027","UPC":"72527273096","Product Name":"Honey Raw","Category":"Food Product","Sub-Category":"Sweetener","In-House Part Number":"1234-027-FP","Material":"Glass","Organic":"True","Size":"8 oz","Inventory":"50","Vendor":"Coscto Wholesale","Price":"$24.80","ETA":"10 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-028","UPC":"72527273097","Product Name":"Pen Holder","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-028-OS","Material":"Plastic/Metal","Organic":"False","Size":"1 unit","Inventory":"10","Vendor":"Office Supply Co","Price":"$7.62","ETA":"4 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-029","UPC":"72527273098","Product Name":"Monitor Stand","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-029-OS","Material":"Wood/Plastic","Organic":"False","Size":"20 x 10 x 6 in","Inventory":"19","Vendor":"Office Supply Co","Price":"$47.44","ETA":"2 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-030","UPC":"72527273099","Product Name":"Pencil Set","Category":"Office Supply","Sub-Category":"Stationery","In-House Part Number":"1234-030-OS","Material":"Wood/Graphite","Organic":"False","Size":"12 pencils","Inventory":"34","Vendor":"Office Supply Co","Price":"$28.73","ETA":"9 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-031","UPC":"72527273100","Product Name":"Highlighters","Category":"Office Supply","Sub-Category":"Stationery","In-House Part Number":"1234-031-OS","Material":"Plastic/Ink","Organic":"False","Size":"6-pack","Inventory":"37","Vendor":"Office Supply Co","Price":"$1.44","ETA":"9 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-032","UPC":"72527273101","Product Name":"Mozzarella Shredded","Category":"Food Product","Sub-Category":"Dairy","In-House Part Number":"1234-032-FP","Material":"—","Organic":"False","Size":"8 oz","Inventory":"28","Vendor":"Coscto Wholesale","Price":"$49.23","ETA":"10 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-034","UPC":"72527273103","Product Name":"Brown Sugar","Category":"Food Product","Sub-Category":"Sweetener","In-House Part Number":"1234-034-FP","Material":"—","Organic":"False","Size":"2 lb","Inventory":"4","Vendor":"Coscto Wholesale","Price":"$40.24","ETA":"8 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-035","UPC":"72527273104","Product Name":"Mechanical Keyboard","Category":"Office Supply","Sub-Category":"Computer Accessory","In-House Part Number":"1234-035-OS","Material":"Plastic/Metal","Organic":"False","Size":"18 x 6 x 1 in","Inventory":"41","Vendor":"Office Supply Co","Price":"$41.81","ETA":"2 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-036","UPC":"72527273105","Product Name":"File Folders","Category":"Office Supply","Sub-Category":"Stationery","In-House Part Number":"1234-036-OS","Material":"Paper/Cardboard","Organic":"False","Size":"25 pieces","Inventory":"45","Vendor":"Office Supply Co","Price":"$3.01","ETA":"8 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-037","UPC":"72527273106","Product Name":"Frozen Blueberries","Category":"Food Product","Sub-Category":"Fruit","In-House Part Number":"1234-037-FP","Material":"—","Organic":"False","Size":"12 oz","Inventory":"37","Vendor":"Coscto Wholesale","Price":"$32.95","ETA":"3 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-038","UPC":"72527273107","Product Name":"Keyboard Wrist Rest","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-038-OS","Material":"Foam/Plastic","Organic":"False","Size":"18 x 2 in","Inventory":"33","Vendor":"Office Supply Co","Price":"$13.34","ETA":"10 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-039","UPC":"72527273108","Product Name":"Rice Vinegar","Category":"Food Product","Sub-Category":"Condiment","In-House Part Number":"1234-039-FP","Material":"Glass","Organic":"False","Size":"16 oz","Inventory":"24","Vendor":"Coscto Wholesale","Price":"$41.93","ETA":"1 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-040","UPC":"72527273109","Product Name":"Office Chair","Category":"Office Supply","Sub-Category":"Furniture","In-House Part Number":"1234-040-OS","Material":"Plastic/Metal","Organic":"False","Size":"1 unit","Inventory":"24","Vendor":"Office Supply Co","Price":"$35.14","ETA":"10 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-041","UPC":"72527273110","Product Name":"Granola Clusters","Category":"Food Product","Sub-Category":"Snack","In-House Part Number":"1234-041-FP","Material":"—","Organic":"False","Size":"10 oz","Inventory":"39","Vendor":"Coscto Wholesale","Price":"$28.69","ETA":"7 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-043","UPC":"72527273112","Product Name":"Cheese Crackers","Category":"Food Product","Sub-Category":"Snack","In-House Part Number":"1234-043-FP","Material":"—","Organic":"False","Size":"8 oz","Inventory":"46","Vendor":"Coscto Wholesale","Price":"$13.63","ETA":"2 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-044","UPC":"72527273113","Product Name":"Sharpie Marker","Category":"Office Supply","Sub-Category":"Stationery","In-House Part Number":"1234-044-OS","Material":"Plastic/Ink","Organic":"False","Size":"4-pack","Inventory":"32","Vendor":"Office Supply Co","Price":"$35.49","ETA":"3 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-045","UPC":"72527273114","Product Name":"Hole Puncher","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-045-OS","Material":"Metal/Plastic","Organic":"False","Size":"1 unit","Inventory":"21","Vendor":"Office Supply Co","Price":"$7.00","ETA":"2 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-046","UPC":"72527273115","Product Name":"Whole Coffee Beans","Category":"Food Product","Sub-Category":"Beverage","In-House Part Number":"1234-046-FP","Material":"—","Organic":"False","Size":"12 oz","Inventory":"4","Vendor":"Coscto Wholesale","Price":"$36.73","ETA":"2 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-047","UPC":"72527273116","Product Name":"Desk Plant","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-047-OS","Material":"Plastic/Plant","Organic":"False","Size":"6 in","Inventory":"39","Vendor":"Office Supply Co","Price":"$5.35","ETA":"3 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-048","UPC":"72527273117","Product Name":"Frozen Mixed Vegetables","Category":"Food Product","Sub-Category":"Vegetable","In-House Part Number":"1234-048-FP","Material":"—","Organic":"False","Size":"12 oz","Inventory":"6","Vendor":"Coscto Wholesale","Price":"$3.25","ETA":"6 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-049","UPC":"72527273118","Product Name":"Laptop Stand","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-049-OS","Material":"Metal/Plastic","Organic":"False","Size":"12 x 10 x 5 in","Inventory":"4","Vendor":"Office Supply Co","Price":"$32.85","ETA":"9 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-050","UPC":"72527273119","Product Name":"Spinach Salad Mix","Category":"Food Product","Sub-Category":"Vegetable","In-House Part Number":"1234-050-FP","Material":"—","Organic":"False","Size":"1 lb","Inventory":"20","Vendor":"Coscto Wholesale","Price":"$17.98","ETA":"8 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-051","UPC":"72527273120","Product Name":"Binder Folder","Category":"Office Supply","Sub-Category":"Stationery","In-House Part Number":"1234-051-OS","Material":"Plastic","Organic":"False","Size":"1 unit","Inventory":"20","Vendor":"Office Supply Co","Price":"$48.48","ETA":"2 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-052","UPC":"72527273121","Product Name":"Plastic Cups","Category":"Office Supply","Sub-Category":"Party Supplies","In-House Part Number":"1234-052-OS","Material":"Plastic","Organic":"False","Size":"10-pack","Inventory":"4","Vendor":"Office Supply Co","Price":"$35.70","ETA":"5 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-053","UPC":"72527273122","Product Name":"Pasta Elbows","Category":"Food Product","Sub-Category":"Grain/Pasta","In-House Part Number":"1234-053-FP","Material":"—","Organic":"False","Size":"16 oz","Inventory":"49","Vendor":"Coscto Wholesale","Price":"$48.48","ETA":"3 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-055","UPC":"72527273124","Product Name":"Soda 12 Pack","Category":"Food Product","Sub-Category":"Beverage","In-House Part Number":"1234-055-FP","Material":"Plastic/Can","Organic":"False","Size":"12 cans","Inventory":"27","Vendor":"Coscto Wholesale","Price":"$20.37","ETA":"1 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-056","UPC":"72527273125","Product Name":"Envelope Box","Category":"Office Supply","Sub-Category":"Stationery","In-House Part Number":"1234-056-OS","Material":"Paper","Organic":"False","Size":"50 envelopes","Inventory":"46","Vendor":"Office Supply Co","Price":"$32.87","ETA":"10 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-057","UPC":"72527273126","Product Name":"Tea Bags","Category":"Food Product","Sub-Category":"Beverage","In-House Part Number":"1234-057-FP","Material":"Paper","Organic":"False","Size":"20 bags","Inventory":"38","Vendor":"Coscto Wholesale","Price":"$37.73","ETA":"4 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-058","UPC":"72527273127","Product Name":"Chocolate Chips","Category":"Food Product","Sub-Category":"Baking","In-House Part Number":"1234-058-FP","Material":"—","Organic":"False","Size":"12 oz","Inventory":"10","Vendor":"Coscto Wholesale","Price":"$33.01","ETA":"10 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-059","UPC":"72527273128","Product Name":"Label Maker","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-059-OS","Material":"Plastic","Organic":"False","Size":"1 unit","Inventory":"40","Vendor":"Office Supply Co","Price":"$4.11","ETA":"2 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-060","UPC":"72527273129","Product Name":"Zucchini Squash","Category":"Food Product","Sub-Category":"Vegetable","In-House Part Number":"1234-060-FP","Material":"—","Organic":"False","Size":"1 lb","Inventory":"37","Vendor":"Coscto Wholesale","Price":"$16.99","ETA":"3 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-061","UPC":"72527273130","Product Name":"Desk Organizer Tray","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-061-OS","Material":"Plastic","Organic":"False","Size":"12 x 8 x 2 in","Inventory":"2","Vendor":"Office Supply Co","Price":"$4.14","ETA":"9 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-062","UPC":"72527273131","Product Name":"Frozen Shrimp","Category":"Food Product","Sub-Category":"Seafood","In-House Part Number":"1234-062-FP","Material":"—","Organic":"False","Size":"1 lb","Inventory":"21","Vendor":"Coscto Wholesale","Price":"$39.02","ETA":"6 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-063","UPC":"72527273132","Product Name":"Mouse Pad","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-063-OS","Material":"Rubber/Cloth","Organic":"False","Size":"9 x 7 in","Inventory":"5","Vendor":"Office Supply Co","Price":"$10.76","ETA":"9 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-064","UPC":"72527273133","Product Name":"Printer Ink","Category":"Office Supply","Sub-Category":"Printer Supply","In-House Part Number":"1234-064-OS","Material":"Plastic/Ink","Organic":"False","Size":"1 cartridge","Inventory":"50","Vendor":"Office Supply Co","Price":"$23.72","ETA":"10 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-065","UPC":"72527273134","Product Name":"All-Purpose Flour","Category":"Food Product","Sub-Category":"Baking","In-House Part Number":"1234-065-FP","Material":"—","Organic":"False","Size":"5 lb","Inventory":"7","Vendor":"Coscto Wholesale","Price":"$12.54","ETA":"7 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-066","UPC":"72527273135","Product Name":"Keyboard Cover","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-066-OS","Material":"Silicone","Organic":"False","Size":"1 unit","Inventory":"20","Vendor":"Office Supply Co","Price":"$48.92","ETA":"3 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-067","UPC":"72527273136","Product Name":"Almonds Raw","Category":"Food Product","Sub-Category":"Nuts","In-House Part Number":"1234-067-FP","Material":"—","Organic":"False","Size":"8 oz","Inventory":"30","Vendor":"Coscto Wholesale","Price":"$48.05","ETA":"4 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-068","UPC":"72527273137","Product Name":"Monitor Arm","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-068-OS","Material":"Metal","Organic":"False","Size":"1 unit","Inventory":"22","Vendor":"Office Supply Co","Price":"$16.98","ETA":"4 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-069","UPC":"72527273138","Product Name":"Dawn Dish Soap","Category":"Cleaning Supply","Sub-Category":"Cleaning","In-House Part Number":"ERROR","Material":"Liquid/Plastic","Organic":"False","Size":"16 oz","Inventory":"25","Vendor":"Cleaning Supply","Price":"$38.05","ETA":"10 Days","Image":"Cleaning Supply"},
+{"Vendor Part Number":"1234-070","UPC":"72527273139","Product Name":"Honey Packets","Category":"Food Product","Sub-Category":"Sweetener","In-House Part Number":"1234-070-FP","Material":"Paper/Plastic","Organic":"True","Size":"10-pack","Inventory":"50","Vendor":"Coscto Wholesale","Price":"$2.03","ETA":"4 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-071","UPC":"72527273140","Product Name":"Filing Box","Category":"Office Supply","Sub-Category":"Furniture","In-House Part Number":"1234-071-OS","Material":"Cardboard","Organic":"False","Size":"1 unit","Inventory":"41","Vendor":"Office Supply Co","Price":"$47.92","ETA":"7 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-072","UPC":"72527273141","Product Name":"Cereal Bars","Category":"Food Product","Sub-Category":"Snack","In-House Part Number":"1234-072-FP","Material":"—","Organic":"False","Size":"6 bars","Inventory":"25","Vendor":"Coscto Wholesale","Price":"$45.98","ETA":"7 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-073","UPC":"72527273142","Product Name":"Desk Shelf","Category":"Office Supply","Sub-Category":"Furniture","In-House Part Number":"1234-073-OS","Material":"Wood/Metal","Organic":"False","Size":"24 x 12 x 12 in","Inventory":"21","Vendor":"Office Supply Co","Price":"$47.03","ETA":"2 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-074","UPC":"72527273143","Product Name":"Avocados","Category":"Food Product","Sub-Category":"Fruit","In-House Part Number":"1234-074-FP","Material":"—","Organic":"False","Size":"1 lb","Inventory":"48","Vendor":"Coscto Wholesale","Price":"$7.13","ETA":"5 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-075","UPC":"72527273144","Product Name":"Desk Calendar","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-075-OS","Material":"Paper/Plastic","Organic":"False","Size":"12 months","Inventory":"39","Vendor":"Office Supply Co","Price":"$40.03","ETA":"8 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-076","UPC":"72527273145","Product Name":"Salmon Portions","Category":"Food Product","Sub-Category":"Seafood","In-House Part Number":"1234-076-FP","Material":"—","Organic":"False","Size":"1 lb","Inventory":"34","Vendor":"Coscto Wholesale","Price":"$47.22","ETA":"6 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-077","UPC":"72527273146","Product Name":"Cable Ties","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-077-OS","Material":"Plastic","Organic":"False","Size":"50-pack","Inventory":"43","Vendor":"Office Supply Co","Price":"$14.37","ETA":"2 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-078","UPC":"72527273147","Product Name":"Cheddar Cheese Slices","Category":"Food Product","Sub-Category":"Dairy","In-House Part Number":"1234-078-FP","Material":"—","Organic":"False","Size":"8 oz","Inventory":"17","Vendor":"Coscto Wholesale","Price":"$3.05","ETA":"10 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-079","UPC":"72527273148","Product Name":"Desk Lamp","Category":"Office Supply","Sub-Category":"Lighting","In-House Part Number":"1234-079-OS","Material":"Metal/Plastic","Organic":"False","Size":"15 x 6 x 6 in","Inventory":"14","Vendor":"Office Supply Co","Price":"$23.43","ETA":"5 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-080","UPC":"72527273149","Product Name":"Instant Noodles","Category":"Food Product","Sub-Category":"Snack","In-House Part Number":"1234-080-FP","Material":"—","Organic":"False","Size":"3-pack","Inventory":"20","Vendor":"Coscto Wholesale","Price":"$43.67","ETA":"6 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-081","UPC":"72527273150","Product Name":"Calculator","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-081-OS","Material":"Plastic","Organic":"False","Size":"1 unit","Inventory":"6","Vendor":"Office Supply Co","Price":"$17.97","ETA":"7 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-082","UPC":"72527273151","Product Name":"Yogurt Cups","Category":"Food Product","Sub-Category":"Dairy","In-House Part Number":"1234-082-FP","Material":"—","Organic":"False","Size":"6 cups","Inventory":"20","Vendor":"Coscto Wholesale","Price":"$16.04","ETA":"3 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-083","UPC":"72527273152","Product Name":"Pen Set","Category":"Office Supply","Sub-Category":"Stationery","In-House Part Number":"1234-083-OS","Material":"Plastic/Ink","Organic":"False","Size":"10 pens","Inventory":"12","Vendor":"Office Supply Co","Price":"$7.61","ETA":"10 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-084","UPC":"72527273153","Product Name":"Whole Milk","Category":"Food Product","Sub-Category":"Dairy","In-House Part Number":"1234-084-FP","Material":"—","Organic":"False","Size":"1 gallon","Inventory":"41","Vendor":"Coscto Wholesale","Price":"$38.63","ETA":"6 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-085","UPC":"72527273154","Product Name":"Desk Fan","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-085-OS","Material":"Plastic/Metal","Organic":"False","Size":"12 in","Inventory":"9","Vendor":"Office Supply Co","Price":"$48.20","ETA":"9 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-086","UPC":"72527273155","Product Name":"Trail Mix","Category":"Food Product","Sub-Category":"Snack","In-House Part Number":"1234-086-FP","Material":"—","Organic":"False","Size":"10 oz","Inventory":"38","Vendor":"Coscto Wholesale","Price":"$31.70","ETA":"5 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-087","UPC":"72527273156","Product Name":"Laptop Dock","Category":"Office Supply","Sub-Category":"Computer Accessory","In-House Part Number":"1234-087-OS","Material":"Plastic/Metal","Organic":"False","Size":"1 unit","Inventory":"35","Vendor":"Office Supply Co","Price":"$30.33","ETA":"3 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-088","UPC":"72527273157","Product Name":"Bottled Water Pack","Category":"Food Product","Sub-Category":"Beverage","In-House Part Number":"1234-088-FP","Material":"Plastic","Organic":"False","Size":"24 bottles","Inventory":"9","Vendor":"Coscto Wholesale","Price":"$7.05","ETA":"4 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-089","UPC":"72527273158","Product Name":"Whiteboard Eraser","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-089-OS","Material":"Plastic/Felt","Organic":"False","Size":"1 unit","Inventory":"0","Vendor":"Office Supply Co","Price":"$43.18","ETA":"4 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-090","UPC":"72527273159","Product Name":"Energy Drink 4 Pack","Category":"Food Product","Sub-Category":"Beverage","In-House Part Number":"1234-090-FP","Material":"Can","Organic":"False","Size":"4 cans","Inventory":"39","Vendor":"Coscto Wholesale","Price":"$21.40","ETA":"8 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-091","UPC":"72527273160","Product Name":"Clipboard Folder","Category":"Office Supply","Sub-Category":"Stationery","In-House Part Number":"1234-091-OS","Material":"Plastic/Cardboard","Organic":"False","Size":"1 unit","Inventory":"41","Vendor":"Office Supply Co","Price":"$12.90","ETA":"10 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-092","UPC":"72527273161","Product Name":"Bread Loaf","Category":"Food Product","Sub-Category":"Bakery","In-House Part Number":"1234-092-FP","Material":"—","Organic":"False","Size":"1 lb","Inventory":"2","Vendor":"Coscto Wholesale","Price":"$37.02","ETA":"6 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-093","UPC":"72527273162","Product Name":"Desk Drawer Unit","Category":"Office Supply","Sub-Category":"Furniture","In-House Part Number":"1234-093-OS","Material":"Plastic/Wood","Organic":"False","Size":"3 drawers","Inventory":"22","Vendor":"Office Supply Co","Price":"$37.20","ETA":"1 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-094","UPC":"72527273163","Product Name":"Frozen Pizza","Category":"Food Product","Sub-Category":"Frozen Meal","In-House Part Number":"1234-094-FP","Material":"—","Organic":"False","Size":"14 in","Inventory":"25","Vendor":"Coscto Wholesale","Price":"$8.26","ETA":"7 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-095","UPC":"72527273164","Product Name":"Pen Cup","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-095-OS","Material":"Plastic","Organic":"False","Size":"1 unit","Inventory":"19","Vendor":"Office Supply Co","Price":"$15.34","ETA":"7 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-096","UPC":"72527273165","Product Name":"Mixed Nuts","Category":"Food Product","Sub-Category":"Nuts","In-House Part Number":"1234-096-FP","Material":"—","Organic":"False","Size":"8 oz","Inventory":"29","Vendor":"Coscto Wholesale","Price":"$25.78","ETA":"2 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-097","UPC":"72527273166","Product Name":"Notebook Set","Category":"Office Supply","Sub-Category":"Stationery","In-House Part Number":"1234-097-OS","Material":"Paper","Organic":"False","Size":"3 notebooks","Inventory":"24","Vendor":"Office Supply Co","Price":"$15.56","ETA":"7 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-098","UPC":"72527273167","Product Name":"Pasta Shells","Category":"Food Product","Sub-Category":"Grain/Pasta","In-House Part Number":"1234-098-FP","Material":"—","Organic":"False","Size":"16 oz","Inventory":"35","Vendor":"Coscto Wholesale","Price":"$6.49","ETA":"7 Days","Image":"images/food_product.png"},
+{"Vendor Part Number":"1234-099","UPC":"72527273168","Product Name":"Printer Stand","Category":"Office Supply","Sub-Category":"Desk Accessory","In-House Part Number":"1234-099-OS","Material":"Metal/Wood","Organic":"False","Size":"24 x 16 x 12 in","Inventory":"44","Vendor":"Office Supply Co","Price":"$20.85","ETA":"3 Days","Image":"images/office_supply.png"},
+{"Vendor Part Number":"1234-100","UPC":"72527273169","Product Name":"Sparkling Water","Category":"Food Product","Sub-Category":"Beverage","In-House Part Number":"1234-100-FP","Material":"Can","Organic":"False","Size":"12-pack","Inventory":"18","Vendor":"Coscto Wholesale","Price":"$25.30","ETA":"3 Days","Image":"images/food_product.png"},
+
+  // ... add all other products with Image field ..
+];
+
+// Build table
+const table = document.getElementById('csv-table');
+const thead = table.querySelector('thead');
+const tbody = table.querySelector('tbody');
+const searchInput = document.getElementById('search');
+
+// Build headers
+const headers = Object.keys(tableData[0]);
+thead.innerHTML = "<tr>" + headers.map(h => `<th>${h}</th>`).join('') + "</tr>";
+
+// Render rows
+function renderTable(data) {
+  tbody.innerHTML = '';
+  data.forEach(row => {
+    let rowHtml = '<tr>';
+    headers.forEach(h => {
+      let cellValue = row[h];
+      let cellClass = '';
+
+      // Apply Organic classes
+      if(h === 'Organic' && (cellValue || '').toString().toUpperCase() === 'FALSE') {
+        cellClass = 'organic-false';
+      }      
+      if(h === 'Organic' && (cellValue || '').toString().toUpperCase() === 'TRUE') {
+        cellClass = 'organic-true';
+      }
+
+      // Render Image if column is Image
+      if(h === 'Image' && cellValue) {
+        cellValue = `<img src="${cellValue}" alt="Product Image" style="max-width:80px;">`;
+      }
+
+      rowHtml += `<td class="${cellClass}">${cellValue}</td>`;
+    });
+    rowHtml += '</tr>';
+    tbody.innerHTML += rowHtml;
+  });
+}
+
+// Initial render
+renderTable(tableData);
+
+// Search functionality
+searchInput.addEventListener('input', function() {
+  const query = this.value.toLowerCase().trim();
+  const filtered = tableData.filter(row => 
+    Object.values(row).some(val => (val || '').toString().toLowerCase().includes(query))
+  );
+  renderTable(filtered);
+});
+</script>
+
+</body>
+</html>
