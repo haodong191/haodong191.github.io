@@ -1,0 +1,98 @@
+Vendor Part Number,UPC,Product Name,Count,Weight,Category,Sub-Category,In-House Part Number,Material,Organic,Size,Inventory,Vendor, Price ,ETA
+1234-001,72527273070,Stapler,TRUE,FALSE,Office Supply,Desk Accessory,1234-001-OS,Metal/Plastic,FALSE,1 unit,29,Office Supply Co,$21.00 ,4
+1234-002,72527273071,Organic Bananas,FALSE,TRUE,Food Product,Fruit,1234-002-FP,—,TRUE,1 lb,45,Coscto Wholesale,$5.98 ,4
+1234-003,72527273072,Printer Paper,TRUE,FALSE,Office Supply,Paper,1234-003-OS,Paper,FALSE,500 sheets,24,Office Supply Co,$47.09 ,2
+1234-004,72527273073,Desk Organizer,TRUE,FALSE,Office Supply,Desk Accessory,1234-004-OS,Plastic/Wood,FALSE,12 x 8 x 5 in,24,Office Supply Co,$30.59 ,10
+1234-005,72527273074,Gala Apples,FALSE,TRUE,Food Product,Fruit,1234-005-FP,—,FALSE,1 lb,45,Coscto Wholesale,$26.29 ,2
+1234-006,72527273075,Brown Rice,FALSE,TRUE,Food Product,Grain,1234-006-FP,—,FALSE,2 lb,7,Coscto Wholesale,$41.24 ,8
+1234-007,72527273076,Paper Clips,TRUE,FALSE,Office Supply,Stationery,1234-007-OS,Metal,FALSE,100 pieces,7,Office Supply Co,$16.69 ,9
+1234-008,72527273077,Sticky Notes,TRUE,FALSE,Office Supply,Stationery,1234-008-OS,Paper,FALSE,"3 x 3 in, 50 sheets",20,Office Supply Co,$42.80 ,8
+1234-009,72527273078,Chicken Breast,FALSE,TRUE,Food Product,Meat,1234-009-FP,—,FALSE,1 lb,4,Coscto Wholesale,$36.84 ,5
+1234-010,72527273079,Filing Cabinet,TRUE,FALSE,Office Supply,Furniture,1234-010-OS,Metal/Wood,FALSE,3 drawers,15,Office Supply Co,$46.15 ,10
+1234-011,72527273080,Fresh Strawberries,FALSE,TRUE,Food Product,Fruit,1234-011-FP,—,FALSE,1 lb,15,Coscto Wholesale,$9.25 ,2
+1234-012,72527273081,Binder Clips,TRUE,FALSE,Office Supply,Stationery,1234-012-OS,Metal,FALSE,12 pieces,22,Office Supply Co,$33.08 ,1
+1234-013,72527273082,Desk Lamp,TRUE,FALSE,Office Supply,Lighting,1234-013-OS,Metal/Plastic,FALSE,15 x 6 x 6 in,38,Office Supply Co,$24.41 ,1
+1234-014,72527273083,Ground Coffee,FALSE,TRUE,Food Product,Beverage,1234-014-FP,—,FALSE,12 oz,7,Coscto Wholesale,$42.10 ,10
+1234-015,72527273084,Greek Yogurt Cups,FALSE,TRUE,Food Product,Dairy,1234-015-FP,—,FALSE,6 cups,9,Coscto Wholesale,$6.92 ,5
+1234-016,72527273085,Tape Dispenser,TRUE,FALSE,Office Supply,Desk Accessory,1234-016-OS,Plastic,FALSE,1 unit,49,Office Supply Co,$37.90 ,1
+1234-017,72527273086,Cheddar Cheese Block,FALSE,TRUE,Food Product,Dairy,1234-017-FP,—,FALSE,1 lb,41,Coscto Wholesale,$40.67 ,5
+1234-018,72527273087,Scissors,TRUE,FALSE,Office Supply,Desk Accessory,1234-018-OS,Metal/Plastic,FALSE,8 in,46,Office Supply Co,$18.35 ,8
+1234-019,72527273088,Notebook,TRUE,FALSE,Office Supply,Stationery,1234-019-OS,Paper,FALSE,100 pages,47,Office Supply Co,$42.41 ,3
+1234-020,72527273089,Clementines,FALSE,TRUE,Food Product,Fruit,1234-020-FP,—,FALSE,1 lb,41,Coscto Wholesale,$19.46 ,2
+1234-021,72527273090,Whiteboard Markers,TRUE,FALSE,Office Supply,Stationery,1234-021-OS,Plastic/Ink,FALSE,4-pack,16,Office Supply Co,$27.78 ,9
+1234-022,72527273091,Avocados,FALSE,TRUE,Food Product,Fruit,1234-022-FP,—,FALSE,1 lb,43,Coscto Wholesale,$39.06 ,2
+1234-023,72527273092,Beef Jerky,FALSE,TRUE,Food Product,Meat Snack,1234-023-FP,—,FALSE,3 oz,8,Coscto Wholesale,$19.13 ,9
+1234-024,72527273093,Desk Mat,TRUE,FALSE,Office Supply,Desk Accessory,1234-024-OS,Rubber/Plastic,FALSE,18 x 12 in,50,Office Supply Co,$11.93 ,3
+1234-025,72527273094,USB Flash Drive,TRUE,FALSE,Office Supply,Storage Device,1234-025-OS,Plastic/Metal,FALSE,32 GB,25,Office Supply Co,$30.42 ,6
+1234-026,72527273095,Trail Mix,TRUE,FALSE,Food Product,Snack,1234-026-FP,—,FALSE,10 oz,38,Coscto Wholesale,$12.22 ,8
+1234-027,72527273096,Honey Raw,FALSE,TRUE,Food Product,Sweetener,1234-027-FP,Glass,TRUE,8 oz,50,Coscto Wholesale,$24.80 ,4
+1234-028,72527273097,Pen Holder,FALSE,TRUE,Office Supply,Desk Accessory,1234-028-OS,Plastic/Metal,FALSE,1 unit,10,Office Supply Co,$7.62 ,10
+1234-029,72527273098,Monitor Stand,TRUE,FALSE,Office Supply,Desk Accessory,1234-029-OS,Wood/Plastic,FALSE,20 x 10 x 6 in,19,Office Supply Co,$47.44 ,4
+1234-030,72527273099,Pencil Set,FALSE,TRUE,Office Supply,Stationery,1234-030-OS,Wood/Graphite,FALSE,12 pencils,34,Office Supply Co,$28.73 ,2
+1234-031,72527273100,Highlighters,TRUE,FALSE,Office Supply,Stationery,1234-031-OS,Plastic/Ink,FALSE,6-pack,37,Office Supply Co,$1.44 ,9
+1234-032,72527273101,Mozzarella Shredded,FALSE,TRUE,Food Product,Dairy,1234-032-FP,—,FALSE,8 oz,28,Coscto Wholesale,$49.23 ,9
+1234-034,72527273103,Brown Sugar,TRUE,FALSE,Food Product,Sweetener,1234-034-FP,—,FALSE,2 lb,4,Coscto Wholesale,$40.24 ,10
+1234-035,72527273104,Mechanical Keyboard,FALSE,TRUE,Office Supply,Computer Accessory,1234-035-OS,Plastic/Metal,FALSE,18 x 6 x 1 in,41,Office Supply Co,$41.81 ,8
+1234-036,72527273105,File Folders,TRUE,FALSE,Office Supply,Stationery,1234-036-OS,Paper/Cardboard,FALSE,25 pieces,45,Office Supply Co,$3.01 ,2
+1234-037,72527273106,Frozen Blueberries,FALSE,TRUE,Food Product,Fruit,1234-037-FP,—,FALSE,12 oz,37,Coscto Wholesale,$32.95 ,8
+1234-038,72527273107,Keyboard Wrist Rest,FALSE,TRUE,Office Supply,Desk Accessory,1234-038-OS,Foam/Plastic,FALSE,18 x 2 in,33,Office Supply Co,$13.34 ,3
+1234-039,72527273108,Rice Vinegar,TRUE,FALSE,Food Product,Condiment,1234-039-FP,Glass,FALSE,16 oz,24,Coscto Wholesale,$41.93 ,10
+1234-040,72527273109,Office Chair,TRUE,FALSE,Office Supply,Furniture,1234-040-OS,Plastic/Metal,FALSE,1 unit,24,Office Supply Co,$35.14 ,1
+1234-041,72527273110,Granola Clusters,FALSE,TRUE,Food Product,Snack,1234-041-FP,—,FALSE,10 oz,39,Coscto Wholesale,$28.69 ,10
+1234-043,72527273112,Cheese Crackers,FALSE,TRUE,Food Product,Snack,1234-043-FP,—,FALSE,8 oz,46,Coscto Wholesale,$13.63 ,7
+1234-044,72527273113,Sharpie Marker,FALSE,TRUE,Office Supply,Stationery,1234-044-OS,Plastic/Ink,FALSE,4-pack,32,Office Supply Co,$35.49 ,2
+1234-045,72527273114,Hole Puncher,TRUE,FALSE,Office Supply,Desk Accessory,1234-045-OS,Metal/Plastic,FALSE,1 unit,21,Office Supply Co,$7.00 ,3
+1234-046,72527273115,Whole Coffee Beans,TRUE,FALSE,Food Product,Beverage,1234-046-FP,—,FALSE,12 oz,4,Coscto Wholesale,$36.73 ,2
+1234-047,72527273116,Desk Plant,TRUE,FALSE,Office Supply,Desk Accessory,1234-047-OS,Plastic/Plant,FALSE,6 in,39,Office Supply Co,$5.35 ,2
+1234-048,72527273117,Frozen Mixed Vegetables,FALSE,TRUE,Food Product,Vegetable,1234-048-FP,—,FALSE,12 oz,6,Coscto Wholesale,$3.25 ,3
+1234-049,72527273118,Laptop Stand,FALSE,TRUE,Office Supply,Desk Accessory,1234-049-OS,Metal/Plastic,FALSE,12 x 10 x 5 in,4,Office Supply Co,$32.85 ,6
+1234-050,72527273119,Spinach Salad Mix,TRUE,FALSE,Food Product,Vegetable,1234-050-FP,—,FALSE,1 lb,20,Coscto Wholesale,$17.98 ,9
+1234-051,72527273120,Binder Folder,TRUE,FALSE,Office Supply,Stationery,1234-051-OS,Plastic,FALSE,1 unit,20,Office Supply Co,$48.48 ,8
+1234-052,72527273121,Plastic Cups,FALSE,TRUE,Office Supply,Party Supplies,1234-052-OS,Plastic,FALSE,10-pack,4,Office Supply Co,$35.70 ,2
+1234-053,72527273122,Pasta Elbows,TRUE,FALSE,Food Product,Grain/Pasta,1234-053-FP,—,FALSE,16 oz,49,Coscto Wholesale,$48.48 ,5
+1234-055,72527273124,Soda 12 Pack,TRUE,FALSE,Food Product,Beverage,1234-055-FP,Plastic/Can,FALSE,12 cans,27,Coscto Wholesale,$20.37 ,3
+1234-056,72527273125,Envelope Box,TRUE,FALSE,Office Supply,Stationery,1234-056-OS,Paper,FALSE,50 envelopes,46,Office Supply Co,$32.87 ,1
+1234-057,72527273126,Tea Bags,FALSE,TRUE,Food Product,Beverage,1234-057-FP,Paper,FALSE,20 bags,38,Coscto Wholesale,$37.73 ,10
+1234-058,72527273127,Chocolate Chips,TRUE,FALSE,Food Product,Baking,1234-058-FP,—,FALSE,12 oz,10,Coscto Wholesale,$33.01 ,4
+1234-059,72527273128,Label Maker,FALSE,TRUE,Office Supply,Desk Accessory,1234-059-OS,Plastic,FALSE,1 unit,40,Office Supply Co,$4.11 ,10
+1234-060,72527273129,Zucchini Squash,FALSE,TRUE,Food Product,Vegetable,1234-060-FP,—,FALSE,1 lb,37,Coscto Wholesale,$16.99 ,2
+1234-061,72527273130,Desk Organizer Tray,TRUE,FALSE,Office Supply,Desk Accessory,1234-061-OS,Plastic,FALSE,12 x 8 x 2 in,2,Office Supply Co,$4.14 ,3
+1234-062,72527273131,Frozen Shrimp,TRUE,FALSE,Food Product,Seafood,1234-062-FP,—,FALSE,1 lb,21,Coscto Wholesale,$39.02 ,9
+1234-063,72527273132,Mouse Pad,TRUE,FALSE,Office Supply,Desk Accessory,1234-063-OS,Rubber/Cloth,FALSE,9 x 7 in,5,Office Supply Co,$10.76 ,6
+1234-064,72527273133,Printer Ink,FALSE,TRUE,Office Supply,Printer Supply,1234-064-OS,Plastic/Ink,FALSE,1 cartridge,50,Office Supply Co,$23.72 ,9
+1234-065,72527273134,All-Purpose Flour,FALSE,TRUE,Food Product,Baking,1234-065-FP,—,FALSE,5 lb,7,Coscto Wholesale,$12.54 ,10
+1234-066,72527273135,Keyboard Cover,TRUE,FALSE,Office Supply,Desk Accessory,1234-066-OS,Silicone,FALSE,1 unit,20,Office Supply Co,$48.92 ,7
+1234-067,72527273136,Almonds Raw,TRUE,FALSE,Food Product,Nuts,1234-067-FP,—,FALSE,8 oz,30,Coscto Wholesale,$48.05 ,3
+1234-068,72527273137,Monitor Arm,FALSE,TRUE,Office Supply,Desk Accessory,1234-068-OS,Metal,FALSE,1 unit,22,Office Supply Co,$16.98 ,4
+1234-069,72527273138,Dawn Dish Soap,TRUE,FALSE,Cleaning Supply,Cleaning,ERROR,Liquid/Plastic,FALSE,16 oz,25,Cleaning Supply,$38.05 ,4
+1234-070,72527273139,Honey Packets,TRUE,FALSE,Food Product,Sweetener,1234-070-FP,Paper/Plastic,TRUE,10-pack,50,Coscto Wholesale,$2.03 ,10
+1234-071,72527273140,Filing Box,FALSE,TRUE,Office Supply,Furniture,1234-071-OS,Cardboard,FALSE,1 unit,41,Office Supply Co,$47.92 ,4
+1234-072,72527273141,Cereal Bars,TRUE,FALSE,Food Product,Snack,1234-072-FP,—,FALSE,6 bars,25,Coscto Wholesale,$45.98 ,7
+1234-073,72527273142,Desk Shelf,FALSE,TRUE,Office Supply,Furniture,1234-073-OS,Wood/Metal,FALSE,24 x 12 x 12 in,21,Office Supply Co,$47.03 ,7
+1234-074,72527273143,Avocados,FALSE,TRUE,Food Product,Fruit,1234-074-FP,—,FALSE,1 lb,48,Coscto Wholesale,$7.13 ,2
+1234-075,72527273144,Desk Calendar,TRUE,FALSE,Office Supply,Desk Accessory,1234-075-OS,Paper/Plastic,FALSE,12 months,39,Office Supply Co,$40.03 ,5
+1234-076,72527273145,Salmon Portions,TRUE,FALSE,Food Product,Seafood,1234-076-FP,—,FALSE,1 lb,34,Coscto Wholesale,$47.22 ,8
+1234-077,72527273146,Cable Ties,TRUE,FALSE,Office Supply,Desk Accessory,1234-077-OS,Plastic,FALSE,50-pack,43,Office Supply Co,$14.37 ,6
+1234-078,72527273147,Cheddar Cheese Slices,FALSE,TRUE,Food Product,Dairy,1234-078-FP,—,FALSE,8 oz,17,Coscto Wholesale,$3.05 ,2
+1234-079,72527273148,Desk Lamp,TRUE,FALSE,Office Supply,Lighting,1234-079-OS,Metal/Plastic,FALSE,15 x 6 x 6 in,14,Office Supply Co,$23.43 ,10
+1234-080,72527273149,Instant Noodles,FALSE,TRUE,Food Product,Snack,1234-080-FP,—,FALSE,3-pack,20,Coscto Wholesale,$43.67 ,5
+1234-081,72527273150,Calculator,TRUE,FALSE,Office Supply,Desk Accessory,1234-081-OS,Plastic,FALSE,1 unit,6,Office Supply Co,$17.97 ,6
+1234-082,72527273151,Yogurt Cups,FALSE,TRUE,Food Product,Dairy,1234-082-FP,—,FALSE,6 cups,20,Coscto Wholesale,$16.04 ,7
+1234-083,72527273152,Pen Set,TRUE,FALSE,Office Supply,Stationery,1234-083-OS,Plastic/Ink,FALSE,10 pens,12,Office Supply Co,$7.61 ,3
+1234-084,72527273153,Whole Milk,TRUE,FALSE,Food Product,Dairy,1234-084-FP,—,FALSE,1 gallon,41,Coscto Wholesale,$38.63 ,10
+1234-085,72527273154,Desk Fan,FALSE,TRUE,Office Supply,Desk Accessory,1234-085-OS,Plastic/Metal,FALSE,12 in,9,Office Supply Co,$48.20 ,6
+1234-086,72527273155,Trail Mix,TRUE,FALSE,Food Product,Snack,1234-086-FP,—,FALSE,10 oz,38,Coscto Wholesale,$31.70 ,9
+1234-087,72527273156,Laptop Dock,TRUE,FALSE,Office Supply,Computer Accessory,1234-087-OS,Plastic/Metal,FALSE,1 unit,35,Office Supply Co,$30.33 ,5
+1234-088,72527273157,Bottled Water Pack,FALSE,TRUE,Food Product,Beverage,1234-088-FP,Plastic,FALSE,24 bottles,9,Coscto Wholesale,$7.05 ,3
+1234-089,72527273158,Whiteboard Eraser,FALSE,TRUE,Office Supply,Desk Accessory,1234-089-OS,Plastic/Felt,FALSE,1 unit,0,Office Supply Co,$43.18 ,4
+1234-090,72527273159,Energy Drink 4 Pack,TRUE,FALSE,Food Product,Beverage,1234-090-FP,Can,FALSE,4 cans,39,Coscto Wholesale,$21.40 ,4
+1234-091,72527273160,Clipboard Folder,TRUE,FALSE,Office Supply,Stationery,1234-091-OS,Plastic/Cardboard,FALSE,1 unit,41,Office Supply Co,$12.90 ,8
+1234-092,72527273161,Bread Loaf,FALSE,TRUE,Food Product,Bakery,1234-092-FP,—,FALSE,1 lb,2,Coscto Wholesale,$37.02 ,10
+1234-093,72527273162,Desk Drawer Unit,TRUE,FALSE,Office Supply,Furniture,1234-093-OS,Plastic/Wood,FALSE,3 drawers,22,Office Supply Co,$37.20 ,6
+1234-094,72527273163,Frozen Pizza,FALSE,TRUE,Food Product,Frozen Meal,1234-094-FP,—,FALSE,14 in,25,Coscto Wholesale,$8.26 ,1
+1234-095,72527273164,Pen Cup,TRUE,FALSE,Office Supply,Desk Accessory,1234-095-OS,Plastic,FALSE,1 unit,19,Office Supply Co,$15.34 ,7
+1234-096,72527273165,Mixed Nuts,FALSE,TRUE,Food Product,Nuts,1234-096-FP,—,FALSE,8 oz,29,Coscto Wholesale,$25.78 ,7
+1234-097,72527273166,Notebook Set,TRUE,FALSE,Office Supply,Stationery,1234-097-OS,Paper,FALSE,3 notebooks,24,Office Supply Co,$15.56 ,2
+1234-098,72527273167,Pasta Shells,TRUE,FALSE,Food Product,Grain/Pasta,1234-098-FP,—,FALSE,16 oz,35,Coscto Wholesale,$6.49 ,7
+1234-099,72527273168,Printer Stand,FALSE,TRUE,Office Supply,Desk Accessory,1234-099-OS,Metal/Wood,FALSE,24 x 16 x 12 in,44,Office Supply Co,$20.85 ,7
+1234-100,72527273169,Sparkling Water,TRUE,FALSE,Food Product,Beverage,1234-100-FP,Can,FALSE,12-pack,18,Coscto Wholesale,$25.30 ,3
