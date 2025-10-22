@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<a name="Catalog Database Excel Worksheets"></a>
+<html>
+	<head>
+		<title>Category Tagging with Pandas</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner" style="text-align: left;">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Home</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="certificates.html">Diplomas & Certificates</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>Category Tagging with Pandas<br /></h1>
+							</header>
+							<section class="tiles">
+									<span class="image main">
+										<a href="images/Error Finder.JPG">
+											<img src="images/Error Finder.JPG" alt="" class="center-image" />
+										</a>
+									</span>
+											<h2>Error Finder Sheet - <a href="https://github.com/haodong191/haodong191.github.io/raw/refs/heads/main/assets/excel%20file/Catalog%20Database%20Sheet%20-%20Error%20Finder.xlsx" download>Download</a></h2>
+												<p>
+													The goal of this sheet is to automate the identification of part numbers with missing values that do not meet the required data fields to become sellable.
+												</p>
+
+												<ul>
+													<li><b>Catalog Database</b>
+														<ul>
+															<li>Columns A through I represent a self-generated catalog database.</li>
+															<li>Includes multiple vendors for two product classes — Food Product and Office Supply.</li>
+															<li>Some products contain missing values, which must be audited to ensure data integrity.</li>
+														</ul>
+													</li>
+
+													<li><b>Total Errors</b>
+														<ul>
+															<li>This count sums errors from Unidentified Class and Missing UPC sections.</li>
+															<li>Provides a quick view of how many audits are required to maintain data integrity standards.</li>
+														</ul>
+													</li>
+
+													<li><b>Unidentified Class</b>
+														<ul>
+															<li>Columns M through S list products with classifications not found in the Catalog Database.</li>
+														</ul>
+													</li>
+
+													<li><b>Missing UPC</b>
+														<ul>
+															<li>Columns U through AA return products with missing UPC values within the Catalog Database.</li>
+														</ul>
+													</li>
+
+													<li><b>Notes</b>
+														<ul>
+															<li>Additional functionality can be built on these examples, such as:</li>
+															<li>Identifying vendors with the most errors — helps detect larger data issues or temporarily disable problematic vendors.</li>
+															<li>Finding products with mismatched values — useful for tracking rolling changes and vendor stock consistency.</li>
+															<li>Suggesting substitutions — provides the next best match for products with errors.</li>
+														</ul>
+													</li>
+												</ul>
+										</p>
+									<span class="image main">
+										<a href="images/Search and Sourcing.JPG">
+											<img src="images/Search and Sourcing.JPG" alt="" class="center-image" />
+										</a>
+									</span>
+										<h2>Search and Sourcing Sheet - <a href="https://github.com/haodong191/haodong191.github.io/raw/refs/heads/main/assets/excel%20file/Catalog%20Database%20Sheet%20-%20Search%20and%20Sourcing.xlsx" download>Download</a></h2>
+											<p>
+												The goal of this sheet is to search for a product by its name and return its availability from multiple vendors.
+											</p>
+
+											<ul>
+												<li><b>Catalog Database</b>
+													<ul>
+														<li>Columns A through I represent a self-generated catalog database that includes some of the same products from different vendors.</li>
+														<li>Only two product classes are included to ensure ease of demonstration.</li>
+														<li><i>Note:</i> This example database is built under the presumption that it meets 100% of our data integrity requirements.</li>
+													</ul>
+												</li>
+
+												<li><b>Search Function</b>
+													<ul>
+														<li>Column L contains the search functionality and example search terms.</li>
+														<li><b>L3</b> serves as the search text box where product names can be entered.</li>
+														<li><b>L7 through L14</b> display the best-matching results, including vendors with varying inventory levels (from high to none).</li>
+													</ul>
+												</li>
+
+												<li><b>Search Results</b>
+													<ul>
+														<li>Columns N through W return products based on the Search Function.</li>
+														<li>Results are sorted by <b>QTY</b> (inventory) in descending order for quick visibility of available stock.</li>
+														<li>Returned products are color-coded to indicate inventory confidence and availability:</li>
+														<ul>
+															<li><span style="color: green;"><b>Green</b></span> – High Confidence</li>
+															<li><span style="color: goldenrod;"><b>Yellow</b></span> – Medium Confidence</li>
+															<li><span style="color: gray;"><b>Grey</b></span> – Zero Inventory</li>
+														</ul>
+														<li>With sales history data, this feature can be expanded to include recommended add-on products related to the searched item.</li>
+													</ul>
+												</li>
+											</ul>
+									</p>
+							</section>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner" style="text-align: left;">
+							
+							<section>
+								<h2>Contact Me!</h2>
+								<ul class="icons">
+									<li><a href="https://www.linkedin.com/in/hao-d/" class="icon brands style2 fa-linkedin"><span class="label">GitHub</span></a></li>
+									<li><a href="https://github.com/haodong191" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="mailto:hdong215@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+									<li><a href="tel:267-639-7800" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
