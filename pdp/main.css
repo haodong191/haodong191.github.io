@@ -117,6 +117,10 @@ body {
   height: 22px;
 }
 
+.logo-text {
+  color: var(--white);
+}
+
 .avatar img {
   height: 50px;
   width: 50px;
