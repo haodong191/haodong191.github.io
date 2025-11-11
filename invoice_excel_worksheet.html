@@ -4,10 +4,10 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<a name="VLOOKUP & Advanced Filters Excel Worksheet with Catalog Database"></a>
+<a name="Catalog Database Excel Worksheets"></a>
 <html>
 	<head>
-		<title>VLOOKUP & Advanced Filters Excel Worksheet with Catalog Database</title>
+		<title>Invoice Excel Worksheet</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -49,56 +49,47 @@
 					<div id="main">
 						<div class="inner">
 							<header>
-								<h1 style="text-align: center;">
-								VLOOKUP & Advanced Filters Excel Worksheet with Catalog Database – 
-								<a href="https://github.com/haodong191/haodong191.github.io/raw/refs/heads/main/assets/excel%20files/Product%20Catalog%20Database%20for%20VLOOKUP%20and%20Advanced%20Filters.xlsx" download>
-									Download
-								</a>
-								</h1>
+								<h1>Invoice Excel Worksheet  - <a href="https://github.com/haodong191/haodong191.github.io/raw/refs/heads/main/invoice/invoice_worksheet_v1.xlsx" download>Download</a></h1>
 							</header>
-							<p style="text-align: center;">These three worksheets provide an example and excerise demonstraing Excel VLOOKUP and Advanced Filters.</p>
+							<p>This worksheet tracks and validates invoices from Rider’s Depot, documenting received SKUs, pending quantities, extra items, and their corresponding values to ensure accurate inventory and payment reconciliation.</p>
 							<section class="tiles">
 									<span class="image main">
-										<a href="images/vlookup_excel_worksheet_1.JPG">
-											<img src="images/vlookup_excel_worksheet_1.JPG" alt="" class="center-image"
-											 style="width: 1500px; height: auto; display: block; margin: 0 auto;" />
+										<a href="images/invoice_worksheet_1.JPG">
+											<img src="images/invoice_worksheet_1.JPG" alt="" class="center-image"
+											 style="width: 1000px; height: auto; display: block; margin: 0 auto;" />
 										</a>
 									</span>
-										<p><strong>VLOOKUP Sheet: </strong>The purpose of the "VLOOKUP" sheet is to use VLOOKUP to reference the values in cells L3 through L7 and return their corresponding data from columns A through J. Additionally, the returned results are formatted to simulate a shopping cart experience, providing a clear and intuitive view of selected items.</p>
-											<ul>
-												<li>=VLOOKUP(L3, A:J, 2, FALSE)</li>
-												<li>=VLOOKUP(L3, A:J, 6, FALSE)</li>
-												<li>=VLOOKUP(L3, A:J, 8, FALSE)</li>
-												<li>=VLOOKUP(L3, A:J, 9, FALSE)</li>
-												<li>=SUM(R3:R9)</li>
-												<li>=SUM(R10:R11)</li>
-											</ul>
+											<p><strong>Step 1:</strong>Input, review and validate the invoiced documentation received from Rider’s Depot.</p>
 									<hr style="border: 1px solid #000; width: 100%; margin: 10px 0;">
 												<span class="image main">
-										<a href="images/vlookup_excel_worksheet_2.JPG">
-											<img src="images/vlookup_excel_worksheet_2.JPG" alt="" class="center-image"
-											 style="width: 1500px; height: auto; display: block; margin: 0 auto;" />
-														</a>
+										<a href="images/invoice_worksheet_2.JPG">
+											<img src="images/invoice_worksheet_2.JPG" alt="" class="center-image"
+											 style="width: 1000px; height: auto; display: block; margin: 0 auto;" />
+										</a>
 									</span>
-										<p><strong>Advanced Filters: </strong>The purpose of the "Advanced Filters" sheet is to filter values of D2 "Food Product" and E2 "Dairy" from the Catalog Database using Excel Advanced Filters and return all rows of relative values.</p>
-											<ul>
-												<li>Filter with values from D2 and E2 in A5:J102</li>
-												<li>Filter the list, in-place</li>
-												<li>List Range: $A$5:$J$102</li>
-												<li>Critera Range: $A$1:$J$2</li>
-											</ul>
+										<p><strong>Step 2:</strong>Input, review and validate the items received from Rider’s Depot.</p>
 									<hr style="border: 1px solid #000; width: 100%; margin: 10px 0;">
 										<span class="image main">
-												<a href="images/vlookup_excel_worksheet_3.JPG">
-													<img src="images/vlookup_excel_worksheet_3.JPG" alt="" class="center-image"
-													 style="width: 1500px; height: auto; display: block; margin: 0 auto;" />
+												<a href="images/invoice_worksheet_3.JPG">
+													<img src="images/invoice_worksheet_3.JPG" alt="" class="center-image"
+													 style="width: 1000px; height: auto; display: block; margin: 0 auto;" />
 												</a>
 										</span>
-											<p><strong>SEARCH: </strong>The "Search" sheet utilizes the FILTER function with ISNUMBER and SEARCH. A user can input text into the Product Name search box (M2) and the functionse searches the name field from the catalog base and returns their correlating values into L6:U6</p>
-												<ul>
-													<li>=FILTER(A6:J102, ISNUMBER(SEARCH(M2, A6:A102)), "ERROR")</li>
-												</ul>
+										<p><strong>Step 3:</strong>Review the Output and Extra Items.</p>
+															<ul>
+															<li>The Output columns display the SKUs that have been received, as well as the quantities still pending. They also show the value of each received SKU and the amount owed to the distributor.</li>
+															<li>The Extra Items columns display any unexpected products that have been delivered to our distribution center and received. This also includes the quantity and total cost of each product.</li>
+														</ul>
+													</li>
 									<hr style="border: 1px solid #000; width: 100%; margin: 10px 0;">
+										<span class="image main">
+											<a href="images/invoice_worksheet_4.JPG">
+												<img src="images/invoice_worksheet_4.JPG" alt="" class="center-image"
+												style="width: 600px; height: auto; display: block; margin: 0 auto;" />
+											</a>
+										</span>
+										<p><strong>Step 4:</strong> Review the Quick View section for a summary of the invoiced items. This includes the quantity and value received, as well as any extra quantities and corresponding values.</p>
+							        <hr style="border: 1px solid #000; width: 100%; margin: 10px 0;">
 								</section>
 						</div>
 					</div>
