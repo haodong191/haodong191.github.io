@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSV Multi-Page Viewer</title>
+  <style>
+    .page {
+      border: 1px solid #000;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 10px;
+      background: #fafafa;
+    }
+    img {
+      max-width: 300px;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>CSV Multi-Page Viewer</h1>
+<div id="container"></div>
+
+<script>
+// 🔹 HARD-CODED CSV — edit as needed
+const csvData = `
+Title,Description,Price,ImageURL,SKU
+Red Backpack,Durable everyday backpack,49.99,https://m.media-amazon.com/images/I/51gcDZDPhqL._AC_UY1000_.jpg,RB-01
+Blue Water Bottle,Insulated bottle,19.99,https://www.thecarycompany.com/media/catalog/product/8/0/8025860.jpg,BWB-10
+Hiking Tent,Lightweight 2-person tent,129.99,https://images.thdstatic.com/productImages/45ab9443-5a38-4ec4-9c6b-05f076d7ffee/svn/zeus-ruta-camping-tents-w1211-108076lb-64_1000.jpg,HT-02
+`.trim();
+
+function parseCSV(data) {
+    return data.split("\n").map(row => row.split(","));
+}
+
+function renderPages() {
+    const rows = parseCSV(csvData);
+    const headers = rows.shift();
+    const container = document.getElementById("container");
+
+    rows.forEach((row, i) => {
+        const page = document.createElement("div");
+        page.className = "page";
+
+        let html = `<h2>Page ${i + 1}</h2>`;
+
+        headers.forEach((header, j) => {
+            const value = row[j];
+
+            // If the field is ImageURL and has a URL → embed an <img>
+            if (header.toLowerCase() === "imageurl" && value && value.startsWith("http")) {
+                html += `
+                    <p><strong>${header}:</strong></p>
+                    <img src="${value}" alt="Image for ${row[0]}">
+                `;
+            } else {
+                html += `<p><strong>${header}:</strong> ${value}</p>`;
+            }
+        });
+
+        page.innerHTML = html;
+        container.appendChild(page);
+    });
+}
+
+renderPages();
+</script>
+
+</body>
+</html>
