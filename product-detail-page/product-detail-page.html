@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CSV Multi-Page Viewer v2</title>
+  <title>CSV Multi-Page Viewer</title>
   <style>
     .page {
       border: 1px solid #000;
@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<h1>CSV Multi-Page Viewer v2</h1>
+<h1>CSV Multi-Page Viewer</h1>
 <div id="container"></div>
 
 <script>
@@ -46,14 +46,14 @@ async function loadCSV() {
         headers.forEach((h, j) => {
             const value = row[j];
 
-// If the field is ImageURL and has a URL → embed an <img>
-            if (header.toLowerCase() === "ImageURL" && value && value.startsWith("http")) {
+            // FIXED IMAGE SUPPORT
+            if (h.toLowerCase().includes("ImageURL")) {
                 html += `
-                    <p><strong>${header}:</strong></p>
-                    <img src="${value}" alt="Image for ${row[0]}">
+                    <p><strong>${h}:</strong></p>
+                    <img src="${value}" alt="${h}">
                 `;
             } else {
-                html += `<p><strong>${header}:</strong> ${value}</p>`;
+                html += `<p><strong>${h}:</strong> ${value}</p>`;
             }
         });
 
