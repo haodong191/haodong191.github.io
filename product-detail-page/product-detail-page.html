@@ -48,7 +48,7 @@ async function loadCSV() {
             const value = row[j];
 
             // Auto-detect IMAGE columns
-            if (h.toLowerCase().includes("image")) {
+            if (h.toLowerCase().includes("ImageURL")) {
                 html += `
                     <p><strong>${h}:</strong></p>
                     <img src="${value}" alt="${h}">

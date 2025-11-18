@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Product Index</title>
+  <title>Products</title>
   <style>
-    .product {
-      border: 1px solid #000;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 10px;
-      background: #f8f8f8;
-    }
-    img {
-      max-width: 150px;
+    .product-link {
       display: block;
-      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      margin: 10px 0;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #000;
+      font-family: Arial;
+    }
+    .product-link:hover {
+      background: #f0f0f0;
     }
   </style>
 </head>
 <body>
 
 <h1>Product List</h1>
-<div id="container"></div>
+<div id="list"></div>
 
 <script>
-// 🔹 HARD-CODED CSV DATA
+// Same CSV here too
 const csvData = `
 Title,Description,Price,ImageURL,SKU
 Red Backpack,Durable everyday backpack,49.99,https://example.com/red.jpg,RB-01
@@ -31,21 +32,29 @@ Blue Water Bottle,Insulated bottle,19.99,https://example.com/bottle.jpg,BWB-10
 Hiking Tent,Lightweight 2-person tent,129.99,https://example.com/tent.jpg,HT-02
 `.trim();
 
-// Parse CSV
-function parseCSV(text) {
-  return text.split("\n").map(row => row.split(","));
+function parseCSV(data) {
+    const [headerLine, ...lines] = data.split("\n");
+    const headers = headerLine.split(",");
+    return lines.map(line => {
+        const values = line.split(",");
+        const obj = {};
+        headers.forEach((h, i) => obj[h] = values[i]);
+        return obj;
+    });
 }
 
-const rows = parseCSV(csvData);
-const headers = rows.shift();
-const container = document.getElementById("container");
+const products = parseCSV(csvData);
+const list = document.getElementById("list");
 
-// Create product list
-rows.forEach((row, i) => {
-  const product = document.createElement("div");
-  product.className = "product";
+// Render product links
+products.forEach((p, index) => {
+    list.innerHTML += `
+      <a class="product-link" href="product.html?id=${index+1}">
+        ${p.Title} — $${p.Price}
+      </a>
+    `;
+});
+</script>
 
-  const obj = {};
-  headers.forEach((h, j) => obj[h] = row[j]);
-
-  product.innerHTML
+</body>
+</html>
