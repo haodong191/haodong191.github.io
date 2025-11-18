@@ -47,13 +47,13 @@ async function loadCSV() {
             const value = row[j];
 
             // IMAGE SUPPORT FROM LOCAL DIRECTORY
-            if (h.toLowerCase().includes("Image")) {
+            if (header.toLowerCase() === "imageurl" && value && value.startsWith("http")) {
                 html += `
-                    <p><strong>${h}:</strong></p>
-                    <img src="images/${value}" alt="${h}">
+                    <p><strong>${header}:</strong></p>
+                    <img src="${value}" alt="Image for ${row[0]}">
                 `;
             } else {
-                html += `<p><strong>${h}:</strong> ${value}</p>`;
+                html += `<p><strong>${header}:</strong> ${value}</p>`;
             }
         });
 
