@@ -46,11 +46,11 @@ async function loadCSV() {
         headers.forEach((h, j) => {
             const value = row[j];
 
-            // FIXED IMAGE SUPPORT
-            if (h.toLowerCase().includes("ImageURL")) {
+            // IMAGE SUPPORT FROM LOCAL DIRECTORY
+            if (h.toLowerCase().includes("Image")) {
                 html += `
                     <p><strong>${h}:</strong></p>
-                    <img src="${value}" alt="${h}">
+                    <img src="images/${value}" alt="${h}">
                 `;
             } else {
                 html += `<p><strong>${h}:</strong> ${value}</p>`;
