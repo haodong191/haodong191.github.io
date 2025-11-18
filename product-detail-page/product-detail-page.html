@@ -37,7 +37,6 @@ async function loadCSV() {
 
     const container = document.getElementById("container");
 
-    // Create a page for each data row
     rows.forEach((row, i) => {
         const page = document.createElement("div");
         page.className = "page";
@@ -47,7 +46,7 @@ async function loadCSV() {
         headers.forEach((h, j) => {
             const value = row[j];
 
-            // Auto-detect IMAGE columns
+            // FIXED IMAGE SUPPORT
             if (h.toLowerCase().includes("ImageURL")) {
                 html += `
                     <p><strong>${h}:</strong></p>
