@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Page</title>
+  <style>
+    .product {
+      border: 1px solid #000;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      background: #fff8e1;
+    }
+    img {
+      max-width: 300px;
+      display: block;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Product Details</h1>
+<div id="product"></div>
+
+<script>
+// SAME CSV DATA HERE TOO (hard-coded)
+const csvData = `
+Title,Description,Price,ImageURL,SKU
+Red Backpack,Durable everyday backpack,49.99,https://example.com/red.jpg,RB-01
+Blue Water Bottle,Insulated bottle,19.99,https://example.com/bottle.jpg,BWB-10
+Hiking Tent,Lightweight 2-person tent,129.99,https://example.com/tent.jpg,HT-02
+`.trim();
+
+function parseCSV(text) {
+  return text.split("\n").map(row => row.split(","));
+}
+
+function getQueryParam(name) {
+  return new URLSearchParams(window.location.search).get(name);
+}
+
+const id = parseInt(getQueryParam("id"), 10);
+
+const rows = parseCSV(csvData);
+const headers = rows.shift();
+const dataRow = rows[id];
+
+if (!dataRow) {
+  document.getElementById("product").innerHTML = "<p>Product not found.</p>";
+} else {
+  const obj = {};
+  headers.forEach((h, j) => obj[h] = dataRow[j]);
+
+  document.getElementById("product").innerHTML = `
+    <div class="product">
+      <img src="${obj.ImageURL}">
+      <h2>${obj.Title}</h2>
+      <p>${obj.Description}</p>
+      <p><strong>Price:</strong> $${obj.Price}</p>
+      <p><strong>SKU:</strong> ${obj.SKU}</p>
+    </div>
+    <a href="index.html">← Back to Products</a>
+  `;
+}
+</script>
+
+</body>
+</html>
