@@ -1,30 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CSV → Multi-Page Viewer</title>
+  <title>CSV Multi-Page Viewer</title>
+  <style>
+    .page {
+      border: 1px solid #000;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 10px;
+      background: #fafafa;
+    }
+
+    img {
+      max-width: 300px;
+      display: block;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
 
+<h1>CSV Multi-Page Viewer</h1>
 <div id="container"></div>
 
 <script>
 async function loadCSV() {
     const response = await fetch("pdp-data.csv");
     const text = await response.text();
+
+    // Split CSV into rows
     const rows = text.trim().split("\n").map(r => r.split(","));
 
+    // First row = headers
     const headers = rows.shift();
+
     const container = document.getElementById("container");
 
+    // Create a page for each data row
     rows.forEach((row, i) => {
         const page = document.createElement("div");
-        page.style.border = "1px solid #000";
-        page.style.padding = "20px";
-        page.style.margin = "20px 0";
+        page.className = "page";
 
-        page.innerHTML = `<h2>Page ${i+1}</h2>` +
-            headers.map((h, j) => `<p><strong>${h}:</strong> ${row[j]}</p>`).join("");
+        let html = `<h2>Page ${i + 1}</h2>`;
 
+        headers.forEach((h, j) => {
+            const value = row[j];
+
+            // Auto-detect IMAGE columns
+            if (h.toLowerCase().includes("image")) {
+                html += `
+                    <p><strong>${h}:</strong></p>
+                    <img src="${value}" alt="${h}">
+                `;
+            } else {
+                html += `<p><strong>${h}:</strong> ${value}</p>`;
+            }
+        });
+
+        page.innerHTML = html;
         container.appendChild(page);
     });
 }
