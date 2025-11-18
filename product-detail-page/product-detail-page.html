@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Product Detail Pages</title>
+  <title>CSV Multi-Page Viewer</title>
   <style>
     .page {
       border: 1px solid #000;
@@ -21,12 +21,12 @@
 </head>
 <body>
 
-<h1>Product Detail Pages</h1>
+<h1>CSV Multi-Page Viewer</h1>
 <div id="container"></div>
 
 <script>
 async function loadCSV() {
-    const response = await fetch("pdp-data.csv");
+    const response = await fetch("assets/pdp-data.csv");
     const text = await response.text();
 
     // Split CSV into rows
@@ -37,6 +37,7 @@ async function loadCSV() {
 
     const container = document.getElementById("container");
 
+    // Create a page for each data row
     rows.forEach((row, i) => {
         const page = document.createElement("div");
         page.className = "page";
@@ -44,16 +45,13 @@ async function loadCSV() {
         let html = `<h2>Page ${i + 1}</h2>`;
 
         headers.forEach((h, j) => {
-            const value = row[j];
+            const value = row[j].trim(); // remove extra spaces
 
-            // IMAGE SUPPORT FROM LOCAL DIRECTORY
-            if (header.toLowerCase() === "imageurl" && value && value.startsWith("http")) {
-                html += `
-                    <p><strong>${header}:</strong></p>
-                    <img src="${value}" alt="Image for ${row[0]}">
-                `;
+            // If the column name is ImageURL, render an image
+            if (h.toLowerCase() === "imageurl") {
+                html += `<p><strong>${h}:</strong></p><img src="${value}" alt="Image">`;
             } else {
-                html += `<p><strong>${header}:</strong> ${value}</p>`;
+                html += `<p><strong>${h}:</strong> ${value}</p>`;
             }
         });
 
