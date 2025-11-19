@@ -79,27 +79,41 @@ async function loadCSV() {
 
     const container = document.getElementById("container");
 
-    rows.forEach((row, i) => {
-        const page = document.createElement("div");
-        page.className = "page";
+rows.forEach((row, i) => {
+    const page = document.createElement("div");
+    page.className = "page";
 
-        let html = `<h2>Page ${i + 1}</h2>`;
+    let html = `<h2>Product ${i + 1}</h2>`;
 
-        headers.forEach((h, j) => {
-            const value = row[j] ? row[j].trim() : "";
+    // Render Product Name first
+    const nameIndex = headers.findIndex(h => h.toLowerCase() === "product name");
+    if (nameIndex !== -1) {
+        const productName = row[nameIndex].trim();
+        html += `<p><strong>Product Name:</strong> ${productName}</p>`;
 
-            if (h.toLowerCase() === "image") {
-                html += `<p><strong>${h}:</strong></p><img src="${value}" alt="Image">`;
-            } else if (h.toLowerCase() === "description") {
-                html += `<p><strong>${h}:</strong></p>${value}`;
-            } else {
-                html += `<p><strong>${h}:</strong> ${value}</p>`;
-            }
-        });
+        // Render Image right after Product Name
+        const imageIndex = headers.findIndex(h => h.toLowerCase() === "image");
+        if (imageIndex !== -1 && row[imageIndex]) {
+            html += `<img src="${row[imageIndex].trim()}" alt="Image">`;
+        }
+    }
 
-        page.innerHTML = html;
-        container.appendChild(page);
+    // Render all other fields except Product Name and Image
+    headers.forEach((h, j) => {
+        const value = row[j] ? row[j].trim() : "";
+        if (h.toLowerCase() === "product name" || h.toLowerCase() === "image") return;
+        
+        if (h.toLowerCase() === "description") {
+            html += `<p><strong>${h}:</strong></p>${value}`;
+        } else {
+            html += `<p><strong>${h}:</strong> ${value}</p>`;
+        }
     });
+
+    page.innerHTML = html;
+    container.appendChild(page);
+});
+
 }
 
 loadCSV();
