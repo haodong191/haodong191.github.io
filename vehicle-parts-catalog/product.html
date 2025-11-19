@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Page</title>
+  <style>
+    .page {
+      border: 1px solid #000;
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 650px;
+      border-radius: 10px;
+      background: #fafafa;
+      font-family: Arial;
+    }
+    img {
+      max-width: 100%;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="container"></div>
+
+<script>
+// 🔹 Hard-coded CSV for product data
+const csvData = `
+Title,Description,Price,ImageURL,SKU
+Denali DL4 DRIVING LIGHT PODS,Introducing the brightest and most durable motorcycle driving lights that won't break the bank. Engineered based on a decade of customer feedback our DL Series Driving Lights are purpose-built to deliver best-in-class beam performance unmatched durability and our signature dimming technology at a price point that is more approachable to new riders younger riders and our rapidly growing international customer base!,224.99 ,https://denalielectronics.com/cdn/shop/files/DNL.DL4.050.A.K_catalog.jpg
+Blue Water Bottle,Insulated bottle,19.99,https://www.thecarycompany.com/media/catalog/product/8/0/8025860.jpg,BWB-10
+Hiking Tent,Lightweight 2-person tent,129.99,https://images.thdstatic.com/productImages/45ab9443-5a38-4ec4-9c6b-05f076d7ffee/svn/zeus-ruta-camping-tents-w1211-108076lb-64_1000.jpg,HT-02
+`.trim();
+
+// Converts CSV to array of objects
+function parseCSV(data) {
+    const [headerLine, ...lines] = data.split("\n");
+    const headers = headerLine.split(",");
+
+    return lines.map(line => {
+        const values = line.split(",");
+        const obj = {};
+        headers.forEach((h, i) => obj[h] = values[i]);
+        return obj;
+    });
+}
+
+// Get product ID from URL parameter (?id=1)
+const urlParams = new URLSearchParams(window.location.search);
+const productId = parseInt(urlParams.get("id")) - 1;
+
+const products = parseCSV(csvData);
+const product = products[productId];
+
+const container = document.getElementById("container");
+
+if (!product) {
+    container.innerHTML = "<p>Product not found.</p>";
+} else {
+    let html = `<div class="page">`;
+
+    // Title
+    html += `<h1>${product.Title}</h1>`;
+
+    // Image (if image URL exists)
+    if (product.ImageURL && product.ImageURL.startsWith("http")) {
+        html += `<img src="${product.ImageURL}" alt="${product.Title}">`;
+    }
+
+    // All remaining fields
+    for (const key in product) {
+        if (key !== "ImageURL" && key !== "Title") {
+            html += `<p><strong>${key}:</strong> ${product[key]}</p>`;
+        }
+    }
+
+    html += `</div>`;
+    container.innerHTML = html;
+}
+</script>
+
+</body>
+</html>
