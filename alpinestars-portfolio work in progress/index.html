@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alpinestars e-commerce catalog development portfolio project by Hao Dong.">
+  <title>Alpinestars Catalog Project | Hao Dong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="https://haodong191.github.io/">Hao Dong</a>
+    <nav>
+      <a href="#catalog">Catalog</a>
+      <a href="#project">Project</a>
+      <a class="nav-cta" href="https://motorcyclegear.com/collections/alpinestars?grid_list=grid-view" target="_blank" rel="noopener">Live Collection ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">E-COMMERCE · CATALOG OPERATIONS · SHOPIFY</span>
+        <h1>ALPINESTARS<br><span>CATALOG PROJECT</span></h1>
+        <p>A standalone portfolio recreation of the Alpinestars collection experience I developed for MotorcycleGear.com, highlighting catalog architecture, merchandising, product data, SEO content, and scalable ecommerce workflows.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#catalog">Explore catalog</a>
+          <a class="button secondary" href="#project">View project details</a>
+        </div>
+      </div>
+      <div class="hero-panel" aria-hidden="true"><div class="hero-mark">A*</div></div>
+    </section>
+
+    <section class="metrics" id="project">
+      <article><strong>Shopify</strong><span>Platform</span></article>
+      <article><strong>Catalog</strong><span>Product architecture</span></article>
+      <article><strong>SEO</strong><span>Product content</span></article>
+      <article><strong>Automation</strong><span>Data workflows</span></article>
+    </section>
+
+    <section class="project-section">
+      <div>
+        <span class="eyebrow dark">ABOUT THE PROJECT</span>
+        <h2>Built for real ecommerce operations.</h2>
+      </div>
+      <div class="project-copy">
+        <p>This portfolio page demonstrates how I approach a large technical product catalog: consistent product structure, clean merchandising, standardized attributes, reusable content patterns, and workflows designed to scale.</p>
+        <div class="skill-grid">
+          <span>Product page creation</span><span>Catalog merchandising</span><span>Technical specifications</span><span>HTML descriptions</span><span>Size charts</span><span>Image management</span><span>SEO content</span><span>Data automation</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="catalog">
+      <div class="section-heading">
+        <div><span class="eyebrow dark">INTERACTIVE DEMO</span><h2>Browse the catalog</h2></div>
+        <p id="resultCount">Loading products…</p>
+      </div>
+
+      <div class="catalog-toolbar">
+        <div class="filter-tabs" id="filterTabs"></div>
+        <div class="toolbar-actions">
+          <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search products"></label>
+          <select id="sortSelect" aria-label="Sort products">
+            <option value="featured">Sort: Featured</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name">Name: A–Z</option>
+          </select>
+          <div class="view-toggle"><button id="gridView" class="active" aria-label="Grid view">▦</button><button id="listView" aria-label="List view">☰</button></div>
+        </div>
+      </div>
+
+      <div id="productGrid" class="product-grid"></div>
+      <div class="catalog-note"><strong>Portfolio note:</strong> This static demo links to the live MotorcycleGear product pages. Add image URLs to <code>products.json</code> to display the original product photography.</div>
+    </section>
+
+    <section class="case-study">
+      <div><span class="eyebrow">WHAT THIS DEMONSTRATES</span><h2>Catalog work is more than adding products.</h2></div>
+      <div class="case-columns">
+        <article><span>01</span><h3>Structure</h3><p>Consistent titles, categories, pricing, availability states, and reusable data fields.</p></article>
+        <article><span>02</span><h3>Merchandising</h3><p>Category browsing, sale presentation, search, sorting, and responsive product discovery.</p></article>
+        <article><span>03</span><h3>Scale</h3><p>JSON-driven cards keep the presentation separate from the product data and make expansion simple.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>Portfolio project by Hao Dong · E-Commerce & Data Specialist</p><a href="https://haodong191.github.io/">Back to portfolio ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
